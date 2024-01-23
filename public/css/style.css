@@ -1,0 +1,53 @@
+body{
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(117, 117, 117);
+    padding: 20px 40rem;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.ajouter {
+    display: flex;
+    gap: 10px;
+    
+}
+
+#addbutton {
+    background-color: red;
+    cursor: pointer;
+}
+
+.mainButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.modalContainer {
+    height: 150px;
+    width: 300px;
+    background-color:cadetblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#theTitle {
+    width: 251px;
+    height: 30px;
+
+}
+
+#validate {
+
+}
