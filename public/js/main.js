@@ -40,15 +40,20 @@ textfield.addEventListener("keydown", (ev) => {
                
         body.appendChild(newTry)
 
+        
 
-        let done = document.querySelector(".fini")
-        let validate = document.querySelector("#validate")
-        validate.addEventListener("click", () => {
-            newTry.style.backgroundColor = "lightgreen"
-            done.appendChild(newTry);
-
-            console.log(done);
+        let trythis = newTry.querySelector("#validate")
+        let validate = newTry.querySelectorAll(".Valider")
+        validate.forEach((element => {
+            element.addEventListener("click", () => {
+                trythis.style.backgroundColor = "lightgreen";
+                // done.appendChild(newTry);
+    
+                
         })
+        
+        }))
+    
 
         let taskInputField = newTry.querySelector("#theTitle");
         let modify = newTry.querySelectorAll(".Modifier");
