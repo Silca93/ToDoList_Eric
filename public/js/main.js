@@ -41,12 +41,12 @@ textfield.addEventListener("keydown", (ev) => {
         body.appendChild(newTry)
 
         
-
-        let trythis = newTry.querySelector("#validate")
+        
         let validate = newTry.querySelectorAll(".Valider")
         validate.forEach((element => {
-            element.addEventListener("click", () => {
-                trythis.style.backgroundColor = "lightgreen";
+            element.addEventListener("click", (element) => {
+                element.target.parentElement.parentElement.style.backgroundColor = "lightgreen";
+                // newTry.style.backgroundColor = "lightgreen";
                 // done.appendChild(newTry);
     
                 
