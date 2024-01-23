@@ -30,9 +30,19 @@ textfield.addEventListener("keydown", (ev) => {
         let validate = newTry.querySelectorAll(".Valider")
         validate.forEach((element => {
             element.addEventListener("click", (element) => {
-                element.target.parentElement.parentElement.style.background = "lightgreen";
+                element.target.parentElement.parentElement.style.display = "none";
                 done.appendChild(newTry);
                 console.log(done);
+
+                done.addEventListener("click", ()=> {
+                    element.target.parentElement.parentElement.style.background = "green"
+                    element.target.parentElement.parentElement.style.display = "flex"
+                    
+
+                    
+    
+                })
+                
     
                 
         })
@@ -60,13 +70,13 @@ textfield.addEventListener("keydown", (ev) => {
 
 
 
-let validateButtons = newTry.querySelectorAll('.Valider');
-validateButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        button.parentElement.parentElement.style.backgroundColor = 'lightgreen';
+// let validateButtons = newTry.querySelectorAll('.Valider');
+// validateButtons.forEach((button) => {
+//     button.addEventListener('click', () => {
+//         button.parentElement.parentElement.style.backgroundColor = 'lightgreen';
         
-    });
-});
+//     });
+// });
 
 
 
