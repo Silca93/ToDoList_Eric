@@ -97,17 +97,12 @@ h3{
     background: linear-gradient(to bottom right, #7EC8E3, #3A7CA5);
     border: 2px solid #2D5A72;
     padding: 15px;
+    
   
        
 } 
   
-  .modalContainer p {
-    color: #fff; /* Set text color to white */
-    font-size: 18px; /* Set font size */
-    font-weight: bold; /* Make the text bold */
-    text-align: center; /* Center align the text */
-    margin: 0; /* Remove default margin */
-  }
+ 
 
 
 #theTitle {
@@ -159,7 +154,7 @@ h3{
   transform: scale(1.05);
 }
 
-.task-container {
+.doneTasksContainer {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
