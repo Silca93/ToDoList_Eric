@@ -21,14 +21,8 @@ done.addEventListener("click", () => {
     
 })
 
-modify.addEventListener("click", () => {
-    taskName.value = textfield.value
-})
-// deleted.addEventListener('click', () => {
-//     // taskName.value = ''
-//     newTry.remove()
 
-// })
+
 let newTry;
 
 let textfield = document.querySelector("#textfield")
@@ -56,11 +50,21 @@ textfield.addEventListener("keydown", (ev) => {
             console.log(done);
         })
 
+        let taskInputField = newTry.querySelector("#theTitle");
+        let modify = newTry.querySelectorAll(".Modifier");
+        modify.forEach((element) => {
+        element.addEventListener("click", () => {
+            taskInputField.value = textfield.value
+        })
+    })
+
+
+
         let deleteButtons = newTry.querySelectorAll(".Supprimer");
         deleteButtons.forEach((element) => {
         element.addEventListener('click', (element) => {
             element.target.parentElement.parentElement.remove();
-            console.log(newTry);
+
         });
     })
        
