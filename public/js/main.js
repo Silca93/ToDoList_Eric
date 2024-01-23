@@ -2,7 +2,8 @@
 
 let taskName = document.querySelector("#theTitle")
 
-// let validate = document.querySelector("#validate")
+
+// let taskContainer = document.querySelector(".task-container");
 
 let modify = document.querySelector("#modify")
 
@@ -16,7 +17,7 @@ let body = document.querySelector("body")
 
 
 done.addEventListener("click", () => {
-    done.style.heigth = "200px"
+    done.style.height = "200px"
     done.style.width = "200px"
     
 })
@@ -28,26 +29,20 @@ let newTry;
 let textfield = document.querySelector("#textfield")
 textfield.addEventListener("keydown", (ev) => {
     if (ev.key == 'Enter'){
-
-        // let newTask = document.createElement("div")
-        // newTask.classList.add("modalContainer")
-        
+             
         newTry = modalContainer.cloneNode(true)
-        
         newTry.style.boxShadow = "5px 6px 0px #383838"
         taskName.value = textfield.value 
         textfield.value = ""
                
-        body.appendChild(newTry)
+        body.appendChild(newTry);
 
-        
-        
         let validate = newTry.querySelectorAll(".Valider")
         validate.forEach((element => {
             element.addEventListener("click", (element) => {
-                element.target.parentElement.parentElement.style.backgroundColor = "lightgreen";
-                // newTry.style.backgroundColor = "lightgreen";
-                // done.appendChild(newTry);
+                element.target.parentElement.parentElement.style.background = "lightgreen";
+                done.appendChild(newTry);
+                console.log(done);
     
                 
         })
@@ -64,7 +59,6 @@ textfield.addEventListener("keydown", (ev) => {
     })
 
 
-
         let deleteButtons = newTry.querySelectorAll(".Supprimer");
         deleteButtons.forEach((element) => {
         element.addEventListener('click', (element) => {
@@ -72,6 +66,10 @@ textfield.addEventListener("keydown", (ev) => {
 
         });
     })
+    // body.appendChild(taskContainer); // Make sure the task container is in the body
+
+    // // Append the newTry to the task container
+    // taskContainer.appendChild(newTry);
        
         
           
