@@ -2,11 +2,11 @@
 
 let taskName = document.querySelector("#theTitle")
 
-let validate = document.querySelector("#validate")
+// let validate = document.querySelector("#validate")
 
 let modify = document.querySelector("#modify")
 
-
+var done = document.querySelector(".fini")
 
 let deleted = document.querySelector("#delete")
 
@@ -15,11 +15,21 @@ let modalContainer = document.querySelector(".modalContainer");
 let body = document.querySelector("body")
 
 
-
-deleted.addEventListener('click', () => {
-
+done.addEventListener("click", () => {
+    done.style.heigth = "200px"
+    done.style.width = "200px"
+    
 })
 
+modify.addEventListener("click", () => {
+    taskName.value = textfield.value
+})
+// deleted.addEventListener('click', () => {
+//     // taskName.value = ''
+//     newTry.remove()
+
+// })
+let newTry;
 
 let textfield = document.querySelector("#textfield")
 textfield.addEventListener("keydown", (ev) => {
@@ -27,25 +37,35 @@ textfield.addEventListener("keydown", (ev) => {
 
         // let newTask = document.createElement("div")
         // newTask.classList.add("modalContainer")
-        let newTry;
+        
         newTry = modalContainer.cloneNode(true)
-        newTry.value = textfield.value
-        console.log(newTry.value);
+        
+        newTry.style.boxShadow = "5px 6px 0px #383838"
+        taskName.value = textfield.value 
+        textfield.value = ""
+               
         body.appendChild(newTry)
-        
-        let inputField = document.createElement("input");
-        inputField.type = "text";
-        
-        inputField.value = textfield.value;
 
-        // newTask.appendChild(inputField);
+
+        let done = document.querySelector(".fini")
+        let validate = document.querySelector("#validate")
+        validate.addEventListener("click", () => {
+            newTry.style.backgroundColor = "lightgreen"
+            done.appendChild(newTry);
+
+            console.log(done);
+        })
+
+        let deleteButtons = newTry.querySelectorAll(".Supprimer");
+        deleteButtons.forEach((element) => {
+        element.addEventListener('click', (element) => {
+            element.target.parentElement.parentElement.remove();
+            console.log(newTry);
+        });
+    })
        
-        // body.appendChild(newTask);
-        // theTitle.value = textfield.value
-                // newTask.innerHTML = '<div class="taskName"><input type="text" id="theTitle" value="'+textfield.value+'"></div><div class="options"><input type="button" id="validate" value="Validate"><input type="button" id="modify" value="Modify"><input type="button" id="delete" value="Delete"></div>';
-
-
-    
+        
+          
     }
     
 
